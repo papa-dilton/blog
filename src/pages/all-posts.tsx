@@ -1,8 +1,11 @@
 import styles from '@/styles/All-posts.module.scss'
 import { getAllPosts } from '@/utils/getPosts'
 import { Post } from '@/Types'
+import Database from '@/app/server-render'
 
 export default function AllPostsPage() {
+    Database()
+    console.log("Hello, Browser!")
     let posts : Post[] = [];
     getAllPosts().then((data) => {posts = data})
     return (
